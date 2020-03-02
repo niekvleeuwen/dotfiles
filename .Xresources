@@ -1,7 +1,7 @@
 URxvt.font: xft:Inconsolata:size=11
 
 URxvt*colorBD:            #ffffff
-URxvt*cursorColor:        #ff8939
+URxvt*cursorColor:        #005288
 URxvt*cursorColor2:       #151515
 
 URxvt.scrollBar: false

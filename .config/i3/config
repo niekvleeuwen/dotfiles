@@ -1,6 +1,7 @@
 set $mod Mod4
 
-gaps inner 15
+gaps inner 20
+gaps outer 5
 smart_gaps on
 new_window none
 
@@ -176,13 +177,16 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 # brightness
-bindsym XF86MonBrightnessUp exec  --no-startup-id "xbacklight  -inc 10 && notify-send 'Brightness Up'"
-bindsym XF86MonBrightnessDown exec  --no-startup-id "xbacklight -dec 10 && notify-send 'Brightness Down'"
+bindsym XF86MonBrightnessUp exec   --no-startup-id "xbacklight -inc 10 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
 
 # volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 5%+ unmute" 
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 5%- unmute"
-bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
+# bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 5%+ unmute" 
+# bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 5%- unmute"
+# bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
 
 # Screenshot
 bindsym Print exec --no-startup-id "deepin-screenshot"
@@ -191,7 +195,7 @@ bindsym Print exec --no-startup-id "deepin-screenshot"
 bindsym $mod+m bar mode toggle
 
 # lockscreen
-bindsym $mod+l --release exec lock
+bindsym $mod+l --release exec --no-startup-id lock
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -211,10 +215,10 @@ mode "$mode_system" {
 #exec --no-startup-id volumeicon
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper1.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Ruimte/wallpaper.jpg
 
 # redshift on startup
-exec --no-startup-id redshift -l 51.909870:4.342000
+# exec --no-startup-id redshift-gtk -l 51.909870:4.342000 -t 6500:3400
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

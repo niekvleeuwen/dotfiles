@@ -2,6 +2,8 @@
 
 The dotfiles for my Arch + i3 setup
 
+![Screenshot](https://raw.githubusercontent.com/niekvleeuwen/dotfiles/master/screenshot.png)
+
 ## Info
 
 * [i3-gaps](https://github.com/Airblader/i3) - The window manager

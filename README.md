@@ -11,6 +11,7 @@ The dotfiles for my Arch + i3 setup
 * [polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify) - Polybar module for showing current playing spotify song.
 * [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) - The lockscreen used in this config
 * [rofi](https://github.com/davatorium/rofi) - Program Launcher 
+* [rEFInd](https://www.rodsbooks.com/refind/) + [regular theme](https://github.com/bobafetthotmail/refind-theme-regular) - Boot manager
 
 ### Theme Spotify ###
 1. [Install Spicetify](https://github.com/khanhas/spicetify-cli)

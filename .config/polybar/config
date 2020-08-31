@@ -41,7 +41,8 @@ height = 35
 
 ; Background ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; background = #2E3440
-background = #181818
+; background = #181818
+background = #333333
 
 ; Foreground ARGB color (e.g. #f00, #ff992a, #ddff1023)
 foreground = #fff
@@ -94,7 +95,7 @@ module-margin = 1
 ;   font-2 = Termsynu:size=8;-1
 ;   font-3 = FontAwesome:size=10
 ; See the Fonts wiki page for more details
-font-0 = IBM Plex Mono:medium:size=9;3
+font-0 = Roboto:regular:size=9.5;3
 font-1 = FontAwesome5Free:style=Solid:size=10;3
 font-2 = unifont:size=10;3
 font-3 = FontAwesome:style=Regular:size=15;3
@@ -148,7 +149,7 @@ tray-maxsize = 16
 ; Enable pseudo transparency
 ; Will automatically be enabled if a fully transparent
 ; background color is defined using `tray-background`
-tray-transparent = false
+; tray-transparent = false
 
 ; Background color for the tray container
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
